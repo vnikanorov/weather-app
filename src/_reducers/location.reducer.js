@@ -2,7 +2,7 @@ import { locationConstants } from '../_constants';
 
 const initialState = {
   error: null,
-  isLoaded: false,
+  isFetching: false,
   data: {},
 };
 
@@ -11,18 +11,18 @@ export default function LocationReducer(state = initialState, action) {
     case locationConstants.FETCH_LOCATION_REQUEST:
       return {
         ...state,
-        isLoaded: false,
+        isFetching: true,
       };
     case locationConstants.FETCH_LOCATION_SUCCESS:
       return {
         ...state,
-        isLoaded: true,
+        isFetching: false,
         data: action.payload,
       };
     case locationConstants.FETCH_LOCATION_FAILURE:
       return {
         ...state,
-        isLoaded: true,
+        isFetching: false,
         error: action.payload,
       };
     default:

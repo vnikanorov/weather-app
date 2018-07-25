@@ -1,1 +1,1 @@
-export { apiLocationConfig } from './requests.helpers';
+export { default as requestsHelpers } from './requests.helpers';

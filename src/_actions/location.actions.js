@@ -1,5 +1,6 @@
 import { locationConstants } from '../_constants';
-import { LocationService } from '../_services';
+import { locationService } from '../_services';
+import { weatherActions } from '.';
 
 function fetchLocation() {
   const request = () => ({ type: locationConstants.FETCH_LOCATION_REQUEST });
@@ -9,11 +10,12 @@ function fetchLocation() {
   return (dispatch) => {
     dispatch(request());
 
-    LocationService()
+    locationService()
       .then(
         (res) => {
           if (res.status === 200) {
             dispatch(success(res.data));
+            dispatch(weatherActions.fetchWeather(res.data.city));
           }
         },
         (error) => {

@@ -1,6 +1,7 @@
 import axios from 'axios';
-import { apiLocationConfig as config } from '../_helpers';
+import settings from '../settings';
+import { requestsHelpers as config } from '../_helpers';
 
-export default function feachLocations() {
-  return axios.get('', config);
+export default function feachWeather(cityName) {
+  return axios.get(`?q=${cityName}&appid=${settings.apiWeatherKey}&units=metric`, config.apiWeatherConfig);
 }

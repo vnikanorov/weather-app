@@ -1,0 +1,31 @@
+.current-weather {
+  display: flex;
+}
+
+.weather-img {
+  flex-grow: 3;
+}
+
+.weather-info {
+  flex-grow: 2;
+}
+
+.weather-country {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.weather-city {
+  font-size: 35px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.weather-temp {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 300;
+  opacity: 0.8;
+}
