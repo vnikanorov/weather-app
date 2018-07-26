@@ -7,10 +7,10 @@ import { WeatherPoint } from '..';
 const CurrentWeather = ({ weather }) => (
   <div className="current-weather">
     <div className="weather-img">
-      <WeatherPoint />
+      <WeatherPoint size="big" />
     </div>
     <div className="weather-current">
-      <div className="weather-country">
+      <div className="weather-city">
         {weather.name}
       </div>
       <div className="weather-info-main">
@@ -30,7 +30,6 @@ const CurrentWeather = ({ weather }) => (
 
 CurrentWeather.propTypes = {
   weather: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
 };
 
 export default CurrentWeather;

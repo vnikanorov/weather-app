@@ -30,3 +30,21 @@
   opacity: 0.2;
   z-index: 100;
 }
+
+.weather-point.small .first-circle {
+  width: 34px;
+  height: 34px;
+  margin-left: -38px;
+}
+
+.weather-point.small .second-circle {
+  width: 42px;
+  height: 42px;
+  margin-left: -47px;
+}
+
+.weather-point.small .third-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+}
