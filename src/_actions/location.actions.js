@@ -16,6 +16,7 @@ function fetchLocation() {
           if (res.status === 200) {
             dispatch(success(res.data));
             dispatch(weatherActions.fetchWeather(res.data.city));
+            dispatch(weatherActions.fetchWeatherForecast(res.data.city));
           }
         },
         (error) => {

@@ -7,7 +7,9 @@ import './app.container.css';
 
 import { locationActions } from '../../_actions';
 
-import { CurrentWeather } from '../../components';
+import { Forecast } from '..';
+
+import { CurrentWeather, Header } from '../../components';
 
 class App extends Component {
   componentDidMount() {
@@ -20,6 +22,7 @@ class App extends Component {
       currentWeather,
       currentLocation,
       isFetchingWeather,
+      isFetchingForecast,
       errorLocation,
       errorWeather,
     } = this.props;
@@ -48,7 +51,7 @@ class App extends Component {
       );
     }
 
-    if (isFetchingWeather) {
+    if (isFetchingWeather || isFetchingForecast) {
       return (
         <div className="bounce-loader">
           <BounceLoader color="#fff" />
@@ -58,7 +61,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <CurrentWeather weather={currentWeather} location={currentLocation} />
+        <Header location={currentLocation} />
+        <CurrentWeather weather={currentWeather} />
+        <Forecast />
       </div>
     );
   }
@@ -69,6 +74,7 @@ App.propTypes = {
   currentWeather: PropTypes.object.isRequired,
   currentLocation: PropTypes.object.isRequired,
   isFetchingWeather: PropTypes.bool.isRequired,
+  isFetchingForecast: PropTypes.bool.isRequired,
   errorLocation: PropTypes.object,
   errorWeather: PropTypes.object,
 };
@@ -77,6 +83,7 @@ const mapStateToProps = state => ({
   currentWeather: state.weather.data,
   currentLocation: state.location.data,
   isFetchingWeather: state.weather.isFetching,
+  isFetchingForecast: state.weather.isFetchingForecast,
   errorLocation: state.location.error,
   errorWeather: state.weather.error,
 });

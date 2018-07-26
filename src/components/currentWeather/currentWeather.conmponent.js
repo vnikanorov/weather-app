@@ -4,17 +4,17 @@ import './currentWeather.conmponent.css';
 
 import { WeatherPoint } from '..';
 
-const CurrentWeather = ({ weather, location }) => (
+const CurrentWeather = ({ weather }) => (
   <div className="current-weather">
     <div className="weather-img">
       <WeatherPoint />
     </div>
-    <div className="weather-info">
+    <div className="weather-current">
       <div className="weather-country">
-        {location.country_name}
+        {weather.name}
       </div>
-      <div className="weather-city">
-        {location.city}
+      <div className="weather-info-main">
+        {weather.weather[0].main}
       </div>
       <div className="weather-main">
         <div className="weather-temp">

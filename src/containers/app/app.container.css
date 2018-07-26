@@ -1,3 +1,8 @@
+.App {
+  width: 650px;
+  margin: 0 auto;
+}
+
 .bounce-loader,
 .error-container {
   display: flex;

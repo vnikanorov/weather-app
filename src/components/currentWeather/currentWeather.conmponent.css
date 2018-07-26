@@ -1,15 +1,14 @@
 .current-weather {
   display: flex;
-  width: 650px;
-  margin: 110px auto 0;
+  margin-top: 110px;
 }
 
 .weather-img {
   flex-grow: 3;
 }
 
-.weather-info {
-  flex-grow: 2;
+.weather-current {
+  flex-grow: 4;
   margin-top: 45px;
 }
 
@@ -20,7 +19,7 @@
   opacity: 0.8;
 }
 
-.weather-city {
+.weather-info-main {
   font-size: 35px;
   color: #fff;
   font-weight: 600;
