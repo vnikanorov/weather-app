@@ -7,6 +7,7 @@ module.exports = {
         "import/prefer-default-export": 0,
         "react/forbid-prop-types": 0,
         "class-methods-use-this": 0,
+        "import/no-cycle": 0,
         "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
     }
 };

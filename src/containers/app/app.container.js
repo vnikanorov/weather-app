@@ -27,12 +27,6 @@ class App extends Component {
       errorWeather,
     } = this.props;
 
-    console.log('isFetchingWeather', isFetchingWeather);
-    console.log('currentLocation', currentLocation);
-    console.log('currentWeather', currentWeather);
-    console.log('errorLocation', errorLocation);
-    console.log('errorWeather', errorWeather);
-
     if (errorLocation || errorWeather) {
       return (
         <div className="error-container">
@@ -77,6 +71,11 @@ App.propTypes = {
   isFetchingForecast: PropTypes.bool.isRequired,
   errorLocation: PropTypes.object,
   errorWeather: PropTypes.object,
+};
+
+App.defaultProps = {
+  errorLocation: {},
+  errorWeather: {},
 };
 
 const mapStateToProps = state => ({
