@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import './timeline.component.css';
 
 const Timeline = ({ position }) => (
   <div

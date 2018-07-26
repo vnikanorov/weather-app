@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './currentWeather.conmponent.css';
 
-import { WeatherPoint } from '..';
+import { WeatherPoint, Timeline } from '..';
 
 const CurrentWeather = ({ weather }) => (
   <div className="current-weather">
@@ -25,6 +25,7 @@ const CurrentWeather = ({ weather }) => (
         </div>
       </div>
     </div>
+    <Timeline position="top" />
   </div>
 );
 

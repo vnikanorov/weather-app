@@ -1,5 +1,6 @@
 .forecast-item {
   display: flex;
+  position: relative;
   min-height: 100px;
 }
 

@@ -4,7 +4,7 @@ import moment from 'moment';
 
 import './forecastItem.component.css';
 
-import { WeatherPoint } from '..';
+import { WeatherPoint, Timeline } from '..';
 
 class ForecastItem extends Component {
   getTime(timestamp) {
@@ -41,6 +41,7 @@ class ForecastItem extends Component {
             {weather.weather[0].description}
           </div>
         </div>
+        <Timeline position="mid" />
       </div>
     );
   }
