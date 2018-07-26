@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Header = ({ location }) => (
   <div className="header">
     <div className="country">
-      {location.country_name}
+      {/* {location.country_name} */}
     </div>
   </div>
 );
