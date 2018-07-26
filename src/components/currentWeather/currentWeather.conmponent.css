@@ -1,5 +1,7 @@
 .current-weather {
   display: flex;
+  width: 650px;
+  margin: 110px auto 0;
 }
 
 .weather-img {
@@ -8,6 +10,7 @@
 
 .weather-info {
   flex-grow: 2;
+  margin-top: 45px;
 }
 
 .weather-country {
@@ -24,7 +27,7 @@
 }
 
 .weather-temp {
-  font-size: 18px;
+  font-size: 25px;
   color: #fff;
   font-weight: 300;
   opacity: 0.8;

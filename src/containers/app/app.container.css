@@ -1,6 +1,12 @@
-.bounce-loader {
+.bounce-loader,
+.error-container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+.error-message {
+  color: #fff;
+  font-size: 25px;
 }

@@ -20,11 +20,33 @@ class App extends Component {
       currentWeather,
       currentLocation,
       isFetchingWeather,
+      errorLocation,
+      errorWeather,
     } = this.props;
 
     console.log('isFetchingWeather', isFetchingWeather);
     console.log('currentLocation', currentLocation);
     console.log('currentWeather', currentWeather);
+    console.log('errorLocation', errorLocation);
+    console.log('errorWeather', errorWeather);
+
+    if (errorLocation || errorWeather) {
+      return (
+        <div className="error-container">
+          {errorLocation ? (
+            <div className="error-message">
+              Oops:
+              {errorLocation.info}
+            </div>
+          ) : (
+            <div className="error-message">
+              Oops:
+              {errorWeather.message}
+            </div>
+          )}
+        </div>
+      );
+    }
 
     if (isFetchingWeather) {
       return (
@@ -47,12 +69,16 @@ App.propTypes = {
   currentWeather: PropTypes.object.isRequired,
   currentLocation: PropTypes.object.isRequired,
   isFetchingWeather: PropTypes.bool.isRequired,
+  errorLocation: PropTypes.object,
+  errorWeather: PropTypes.object,
 };
 
 const mapStateToProps = state => ({
   currentWeather: state.weather.data,
   currentLocation: state.location.data,
   isFetchingWeather: state.weather.isFetching,
+  errorLocation: state.location.error,
+  errorWeather: state.weather.error,
 });
 
 const mapDispatchToProps = dispatch => ({
