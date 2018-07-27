@@ -6,7 +6,7 @@
   width: 33%;
   background-color: #53478d;
   z-index: 9999;
-  transition: right 200ms linear;
+  transition: right 200ms ease-in;
 }
 
 .menu-enter {

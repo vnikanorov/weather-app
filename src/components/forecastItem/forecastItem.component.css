@@ -4,6 +4,17 @@
   min-height: 100px;
 }
 
+.forecast-item:last-child::after {
+  position: absolute;
+    bottom: -6px;
+    left: 78px;
+    width: 10px;
+    height: 10px;
+    background-color: #7d71a7;
+    border-radius: 50%;
+    content: '';
+}
+
 .forecast-time {
   margin-right: 15px;
   margin-top: 16px;
