@@ -13,6 +13,8 @@ class Header extends Component {
     super(props);
     const { dispatch } = props;
 
+    this.menuBtnRef = React.createRef();
+
     this.boundActionCreators = bindActionCreators(layoutActions, dispatch);
 
     this.handleMenuBtn = this.handleMenuBtn.bind(this);
@@ -33,6 +35,7 @@ class Header extends Component {
             Wether App
           </div>
           <div
+            ref={this.menuBtnRef}
             className="btn-menu"
             onClick={this.handleMenuBtn}
           >
@@ -41,7 +44,7 @@ class Header extends Component {
             <span />
           </div>
         </div>
-        {layout.menu && <Menu domRef={this.menuRef} {...this.boundActionCreators} />}
+        <Menu menuBtnRef={this.menuBtnRef} layout={layout} {...this.boundActionCreators} />
       </div>
     );
   }

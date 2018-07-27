@@ -1,9 +1,31 @@
 .menu {
   position: fixed;
   top: 0;
-  right: 0;
   bottom: 0;
+  right: 0%;
   width: 33%;
   background-color: #53478d;
   z-index: 9999;
+  transition: right 200ms linear;
+}
+
+.menu-enter {
+  right: -33%;
+}
+.menu-enter-active {
+  right: 0%;
+}
+.menu-exit {
+  right: 0%;
+}
+.menu-exit-active {
+  right: -33%;
+}
+
+.menu.close {
+  right: -33%;
+}
+
+.menu.open {
+  right: 0%;
 }
