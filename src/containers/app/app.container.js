@@ -7,9 +7,9 @@ import './app.container.css';
 
 import { locationActions } from '../../_actions';
 
-import { Forecast } from '..';
+import { Forecast, Header } from '..';
 
-import { CurrentWeather, Header } from '../../components';
+import { CurrentWeather } from '../../components';
 
 class App extends Component {
   componentDidMount() {
