@@ -1,0 +1,18 @@
+.timeline {
+  position: absolute;
+  width: 4px;
+  background-color: #fff;
+  opacity: 0.2;
+}
+
+.timeline.top {
+  bottom: 0;
+  height: 180.5px;
+  left: 94px;
+}
+
+.timeline.mid {
+  top: 0;
+  bottom: 0;
+  left: 81.5px;
+}

@@ -1,0 +1,19 @@
+.App {
+  width: 650px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.bounce-loader,
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.error-message {
+  color: #fff;
+  font-size: 25px;
+}

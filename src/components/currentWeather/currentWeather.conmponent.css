@@ -1,0 +1,35 @@
+.current-weather {
+  display: flex;
+  position: relative;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+.weather-img {
+  flex-grow: 3;
+}
+
+.weather-current {
+  flex-grow: 4;
+  margin-top: 45px;
+}
+
+.weather-city {
+  font-size: 22px;
+  color: #fff;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.weather-info-main {
+  font-size: 35px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.weather-temp {
+  font-size: 25px;
+  color: #fff;
+  font-weight: 300;
+  opacity: 0.8;
+}
