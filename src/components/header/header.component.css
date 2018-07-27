@@ -1,0 +1,25 @@
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.header-title {
+  color: #8f639f;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.btn-menu {
+  cursor: pointer;
+  width: 30px;
+  padding: 10px;
+}
+
+.btn-menu span {
+  display: block;
+  height: 3px;
+  margin-bottom: 5px;
+  background-color: #8f639f;
+}

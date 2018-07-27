@@ -1,7 +1,7 @@
 .current-weather {
   display: flex;
   position: relative;
-  margin-top: 110px;
+  margin-top: 10px;
   padding-bottom: 20px;
 }
 
