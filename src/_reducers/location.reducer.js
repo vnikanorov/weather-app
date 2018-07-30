@@ -3,6 +3,7 @@ import { locationConstants as type } from '../_constants';
 const initialState = {
   error: null,
   isFetching: false,
+  currentLocation: '',
   data: {},
 };
 
@@ -24,6 +25,11 @@ export default function LocationReducer(state = initialState, action) {
         ...state,
         isFetching: false,
         error: action.payload,
+      };
+    case type.SET_CURRENT_LOCATION:
+      return {
+        ...state,
+        currentLocation: action.payload,
       };
     default:
       return state;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { BounceLoader } from 'react-spinners';
 
 import './forecast.container.css';
 
@@ -16,6 +17,16 @@ class Forecast extends Component {
   }
 
   render() {
+    const { isFetching } = this.props;
+
+    if (isFetching) {
+      return (
+        <div className="bounce-loader">
+          <BounceLoader color="#fff" />
+        </div>
+      );
+    }
+
     return (
       <div className="forecast">
         {this.renderItems()}
@@ -26,6 +37,7 @@ class Forecast extends Component {
 
 Forecast.propTypes = {
   forecast: PropTypes.object.isRequired,
+  isFetching: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({

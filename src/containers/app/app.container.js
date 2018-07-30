@@ -7,7 +7,7 @@ import './app.container.css';
 
 import { locationActions } from '../../_actions';
 
-import { Forecast, Header } from '..';
+import { Forecast, Header, Search } from '..';
 
 import { CurrentWeather, Footer } from '../../components';
 
@@ -45,7 +45,7 @@ class App extends Component {
       );
     }
 
-    if (isFetchingWeather || isFetchingForecast) {
+    if (isFetchingWeather) {
       return (
         <div className="bounce-loader">
           <BounceLoader color="#fff" />
@@ -56,8 +56,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header location={currentLocation} />
+        <Search />
         <CurrentWeather weather={currentWeather} />
-        <Forecast />
+        <Forecast isFetching={isFetchingForecast} />
         <Footer />
       </div>
     );

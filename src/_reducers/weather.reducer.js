@@ -3,8 +3,10 @@ import { weatherConstants as type } from '../_constants';
 const initialState = {
   error: null,
   errorForecast: null,
+  errorNewWeather: null,
   isFetching: true,
   isFetchingForecast: true,
+  isFetchingNewWeather: true,
   data: {},
   dataForecast: {},
 };
@@ -44,6 +46,23 @@ export default function WeatherReducer(state = initialState, action) {
         ...state,
         isFetchingForecast: false,
         errorForecast: action.payload,
+      };
+    case type.FETCH_NEW_WEATHER_REQUEST:
+      return {
+        ...state,
+        isFetchingNewWeather: true,
+      };
+    case type.FETCH_NEW_WEATHER_SUCCESS:
+      return {
+        ...state,
+        isFetchingNewWeather: false,
+        data: action.payload,
+      };
+    case type.FETCH_NEW_WEATHER_FAILURE:
+      return {
+        ...state,
+        isFetchingNewWeather: false,
+        errorNewWeather: action.payload,
       };
     default:
       return state;

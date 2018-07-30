@@ -10,7 +10,7 @@
 }
 
 .menu-wrap {
-  padding: 15px;
+  padding: 20px;
 }
 
 .menu-enter {
@@ -51,6 +51,7 @@
 
 .menu-label {
   flex: 1;
+  margin-right: 5px;
 }
 
 .menu-value {
