@@ -22,7 +22,7 @@ class Menu extends Component {
   }
 
   render() {
-    const { layout } = this.props;
+    const { layout, location } = this.props;
 
     return (
       <CSSTransition
@@ -43,6 +43,23 @@ class Menu extends Component {
         >
           <div className="menu-wrap">
             <div className="menu-title">
+              Your location:
+            </div>
+            <div className="menu-text">
+              <div className="menu-label">
+                Сountry:
+              </div>
+              <div className="menu-value">
+                {location.country_name}
+              </div>
+            </div>
+            <div className="menu-text">
+              <div className="menu-label">
+                Сity:
+              </div>
+              <div className="menu-value">
+                {location.city}
+              </div>
             </div>
           </div>
         </div>
@@ -55,6 +72,7 @@ Menu.propTypes = {
   closeMenu: PropTypes.func.isRequired,
   layout: PropTypes.object.isRequired,
   menuBtnRef: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default Menu;

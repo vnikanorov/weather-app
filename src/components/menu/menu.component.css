@@ -9,6 +9,10 @@
   transition: right 200ms ease-in;
 }
 
+.menu-wrap {
+  padding: 15px;
+}
+
 .menu-enter {
   right: -33%;
 }
@@ -28,4 +32,27 @@
 
 .menu.open {
   right: 0%;
+}
+
+/* Text format */
+
+.menu-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.menu-text {
+  display: flex;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.menu-label {
+  flex: 1;
+}
+
+.menu-value {
+  flex: 2;
 }

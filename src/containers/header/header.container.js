@@ -27,7 +27,7 @@ class Header extends Component {
   }
 
   render() {
-    const { layout } = this.props;
+    const { layout, location } = this.props;
     return (
       <div className="header">
         <div className="header-wrap">
@@ -44,7 +44,7 @@ class Header extends Component {
             <span />
           </div>
         </div>
-        <Menu menuBtnRef={this.menuBtnRef} layout={layout} {...this.boundActionCreators} />
+        <Menu menuBtnRef={this.menuBtnRef} layout={layout} location={location} {...this.boundActionCreators} />
       </div>
     );
   }
@@ -52,11 +52,13 @@ class Header extends Component {
 
 Header.propTypes = {
   layout: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
   layout: state.layout,
+  location: state.location.data,
 });
 
 export default connect(
