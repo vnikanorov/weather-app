@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 
 import { MoonLoader } from 'react-spinners';
 
@@ -28,20 +29,21 @@ class Search extends Component {
 
     event.preventDefault();
 
-    this.setState({ value: '' });
-
-    setCurrentLocation(value);
+    if (value.length > 2) {
+      this.setState({ value: '' });
+      setCurrentLocation(value.trim());
+    }
   }
 
   render() {
-    const { currentLocation, isFetching } = this.props;
+    const { currentLocation, isFetching, error } = this.props;
     const { value } = this.state;
     return (
       <div className="search">
         <form className="search-form" onSubmit={this.handleSubmit}>
           <input
             type="text"
-            className="search-input"
+            className={classNames('search-input', { error: error !== null })}
             placeholder={currentLocation || 'Search city...'}
             value={value}
             onChange={this.handleChange}
@@ -54,6 +56,11 @@ class Search extends Component {
             )}
           </button>
         </form>
+        {error && (
+          <div className="search-error">
+            {error.response.data.message}
+          </div>
+        )}
       </div>
     );
   }
@@ -62,6 +69,7 @@ class Search extends Component {
 const mapStateToProps = state => ({
   currentLocation: state.location.currentLocation,
   isFetching: state.weather.isFetchingNewWeather,
+  error: state.weather.errorNewWeather,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -74,6 +82,7 @@ Search.propTypes = {
   setCurrentLocation: PropTypes.func.isRequired,
   currentLocation: PropTypes.string.isRequired,
   isFetching: PropTypes.bool.isRequired,
+  error: PropTypes.object.isRequired,
 };
 
 export default connect(

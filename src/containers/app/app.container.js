@@ -56,7 +56,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header location={currentLocation} />
-        <Search />
+        {/* <Search /> */}
         <CurrentWeather weather={currentWeather} />
         <Forecast isFetching={isFetchingForecast} />
         <Footer />

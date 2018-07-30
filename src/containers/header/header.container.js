@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux'
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import './header.container.css';
+import { Search } from '..';
 import { Menu } from '../../components';
 
 import { layoutActions } from '../../_actions';
@@ -34,6 +35,7 @@ class Header extends Component {
           <div className="header-title">
             Wether App
           </div>
+          <Search />
           <div
             ref={this.menuBtnRef}
             className="btn-menu"

@@ -57,6 +57,7 @@ export default function WeatherReducer(state = initialState, action) {
         ...state,
         isFetchingNewWeather: false,
         data: action.payload,
+        errorNewWeather: null,
       };
     case type.FETCH_NEW_WEATHER_FAILURE:
       return {

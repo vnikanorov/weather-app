@@ -4,16 +4,12 @@ import moment from 'moment';
 
 import './forecastItem.component.css';
 
+import { utils } from '../../_helpers';
 import { WeatherPoint, Timeline } from '..';
 
 class ForecastItem extends Component {
   getTime(timestamp) {
     return moment.unix(timestamp).format('HH:mm');
-  }
-
-  getIntTemp(temp) {
-    const str = String(temp);
-    return str.split('.')[0];
   }
 
   render() {
@@ -32,7 +28,7 @@ class ForecastItem extends Component {
             {weather.weather[0].main}
           </div>
           <div className="info-temp">
-            {this.getIntTemp(weather.main.temp)}
+            {utils.getIntTemp(weather.main.temp)}
             <span>
               &deg;C
             </span>
