@@ -1,4 +1,4 @@
-import { layoutConstants } from '../_constants';
+import { layoutConstants as type } from '../_constants';
 
 const initialState = {
   menu: false,
@@ -6,12 +6,12 @@ const initialState = {
 
 export default function LayoutReducer(state = initialState, action) {
   switch (action.type) {
-    case layoutConstants.OPEN_MENU:
+    case type.OPEN_MENU:
       return {
         ...state,
         menu: true,
       };
-    case layoutConstants.CLOSE_MENU:
+    case type.CLOSE_MENU:
       return {
         ...state,
         menu: false,
