@@ -23,7 +23,7 @@ class Header extends Component {
 
   handleMenuBtn() {
     const { dispatch } = this.props;
-    const action = layoutActions.openMenu();
+    const action = layoutActions.toggleMenu();
     dispatch(action);
   }
 
@@ -46,7 +46,12 @@ class Header extends Component {
             <span />
           </div>
         </div>
-        <Menu menuBtnRef={this.menuBtnRef} layout={layout} location={location} {...this.boundActionCreators} />
+        <Menu
+          menuBtnRef={this.menuBtnRef}
+          layout={layout}
+          location={location}
+          {...this.boundActionCreators}
+        />
       </div>
     );
   }

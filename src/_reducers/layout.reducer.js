@@ -16,6 +16,11 @@ export default function LayoutReducer(state = initialState, action) {
         ...state,
         menu: false,
       };
+    case type.TOGGLE_MENU:
+      return {
+        ...state,
+        menu: !state.menu,
+      };
     default:
       return state;
   }

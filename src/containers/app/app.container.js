@@ -7,7 +7,7 @@ import './app.container.css';
 
 import { locationActions } from '../../_actions';
 
-import { Forecast, Header, Search } from '..';
+import { Forecast, Header } from '..';
 
 import { CurrentWeather, Footer } from '../../components';
 
@@ -56,7 +56,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header location={currentLocation} />
-        {/* <Search /> */}
         <CurrentWeather weather={currentWeather} />
         <Forecast isFetching={isFetchingForecast} />
         <Footer />

@@ -78,11 +78,15 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
+Search.defaultProps = {
+  error: null,
+};
+
 Search.propTypes = {
   setCurrentLocation: PropTypes.func.isRequired,
   currentLocation: PropTypes.string.isRequired,
   isFetching: PropTypes.bool.isRequired,
-  error: PropTypes.object.isRequired,
+  error: PropTypes.object,
 };
 
 export default connect(
