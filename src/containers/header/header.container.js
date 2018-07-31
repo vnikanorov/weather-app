@@ -36,15 +36,16 @@ class Header extends Component {
             Wether App
           </div>
           <Search />
-          <div
+          <button
             ref={this.menuBtnRef}
+            type="button"
             className="btn-menu"
             onClick={this.handleMenuBtn}
           >
             <span />
             <span />
             <span />
-          </div>
+          </button>
         </div>
         <Menu
           menuBtnRef={this.menuBtnRef}

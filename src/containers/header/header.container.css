@@ -13,8 +13,11 @@
 
 .btn-menu {
   cursor: pointer;
-  width: 30px;
+  width: 48px;
   padding: 10px;
+  border: none;
+  outline: none;
+  background: none;
 }
 
 .btn-menu span {
