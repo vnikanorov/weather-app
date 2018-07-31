@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 
 import './forecastItem.component.css';
 
@@ -8,17 +7,13 @@ import { utils } from '../../_helpers';
 import { WeatherPoint, Timeline } from '..';
 
 class ForecastItem extends Component {
-  getTime(timestamp) {
-    return moment.unix(timestamp).format('HH:mm');
-  }
-
   render() {
     const { weather } = this.props;
 
     return (
       <div className="forecast-item">
         <div className="forecast-time">
-          {this.getTime(weather.dt)}
+          {utils.timestampToTime(weather.dt)}
         </div>
         <div className="forecast-icon">
           <WeatherPoint size="small" />

@@ -9,7 +9,7 @@ import { locationActions } from '../../_actions';
 
 import { Forecast, Header } from '..';
 
-import { CurrentWeather, Footer } from '../../components';
+import { CurrentWeather, Footer, WeatherInformation } from '../../components';
 
 class App extends Component {
   componentDidMount() {
@@ -57,7 +57,10 @@ class App extends Component {
       <div className="App">
         <Header location={currentLocation} />
         <CurrentWeather weather={currentWeather} />
-        <Forecast isFetching={isFetchingForecast} />
+        <div className="more-informations">
+          <Forecast isFetching={isFetchingForecast} />
+          <WeatherInformation {...currentWeather} />
+        </div>
         <Footer />
       </div>
     );
