@@ -11,7 +11,9 @@ class Forecast extends Component {
   renderItems() {
     const { forecast } = this.props;
 
-    return forecast.list.map(item => (
+    const data = forecast.list.slice(0, 10);
+
+    return data.map(item => (
       <ForecastItem key={item.dt} weather={item} />
     ));
   }

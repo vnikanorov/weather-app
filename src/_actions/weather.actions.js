@@ -35,11 +35,7 @@ function fetchWeatherForecast(cityName) {
       .then(
         (res) => {
           if (res.status === 200) {
-            const data = {
-              ...res.data,
-              list: res.data.list.slice(0, 10),
-            };
-            dispatch(success(data));
+            dispatch(success(res.data));
           }
         },
         (error) => {

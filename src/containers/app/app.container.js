@@ -9,7 +9,11 @@ import { locationActions } from '../../_actions';
 
 import { Forecast, Header } from '..';
 
-import { CurrentWeather, Footer, WeatherInformation } from '../../components';
+import {
+  CurrentWeather,
+  Footer,
+  WeatherInformation,
+} from '../../components';
 
 class App extends Component {
   componentDidMount() {
@@ -25,6 +29,7 @@ class App extends Component {
       isFetchingForecast,
       errorLocation,
       errorWeather,
+      weatherForecast,
     } = this.props;
 
     if (errorLocation || errorWeather) {
@@ -59,7 +64,13 @@ class App extends Component {
         <CurrentWeather weather={currentWeather} />
         <div className="more-informations">
           <Forecast isFetching={isFetchingForecast} />
-          <WeatherInformation {...currentWeather} />
+          <div className="more-info-container">
+            <WeatherInformation
+              {...currentWeather}
+              weatherForecast={weatherForecast}
+              isFetchingForecast={isFetchingForecast}
+            />
+          </div>
         </div>
         <Footer />
       </div>
@@ -70,6 +81,7 @@ class App extends Component {
 App.propTypes = {
   getLocation: PropTypes.func.isRequired,
   currentWeather: PropTypes.object.isRequired,
+  weatherForecast: PropTypes.object.isRequired,
   currentLocation: PropTypes.object.isRequired,
   isFetchingWeather: PropTypes.bool.isRequired,
   isFetchingForecast: PropTypes.bool.isRequired,
@@ -84,6 +96,7 @@ App.defaultProps = {
 
 const mapStateToProps = state => ({
   currentWeather: state.weather.data,
+  weatherForecast: state.weather.dataForecast,
   currentLocation: state.location.data,
   isFetchingWeather: state.weather.isFetching,
   isFetchingForecast: state.weather.isFetchingForecast,

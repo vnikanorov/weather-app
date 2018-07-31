@@ -21,3 +21,7 @@
 .more-informations {
   display: flex;
 }
+
+.more-info-container {
+  margin-left: 110px;
+}
