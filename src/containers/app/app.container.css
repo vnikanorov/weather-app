@@ -17,3 +17,11 @@
   color: #fff;
   font-size: 25px;
 }
+
+.more-informations {
+  display: flex;
+}
+
+.more-info-container {
+  margin-left: 110px;
+}

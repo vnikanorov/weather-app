@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './currentWeather.conmponent.css';
 
+import { utils } from '../../_helpers';
+
 import { WeatherPoint, Timeline } from '..';
 
 const CurrentWeather = ({ weather }) => (
@@ -18,7 +20,7 @@ const CurrentWeather = ({ weather }) => (
       </div>
       <div className="weather-main">
         <div className="weather-temp">
-          {weather.main.temp}
+          {utils.getIntTemp(weather.main.temp)}
           <span>
             &deg;C
           </span>

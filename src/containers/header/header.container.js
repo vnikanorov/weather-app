@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux'
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import './header.container.css';
+import { Search } from '..';
 import { Menu } from '../../components';
 
 import { layoutActions } from '../../_actions';
@@ -22,29 +23,36 @@ class Header extends Component {
 
   handleMenuBtn() {
     const { dispatch } = this.props;
-    const action = layoutActions.openMenu();
+    const action = layoutActions.toggleMenu();
     dispatch(action);
   }
 
   render() {
-    const { layout } = this.props;
+    const { layout, location } = this.props;
     return (
       <div className="header">
         <div className="header-wrap">
           <div className="header-title">
             Wether App
           </div>
-          <div
+          <Search />
+          <button
             ref={this.menuBtnRef}
+            type="button"
             className="btn-menu"
             onClick={this.handleMenuBtn}
           >
             <span />
             <span />
             <span />
-          </div>
+          </button>
         </div>
-        <Menu menuBtnRef={this.menuBtnRef} layout={layout} {...this.boundActionCreators} />
+        <Menu
+          menuBtnRef={this.menuBtnRef}
+          layout={layout}
+          location={location}
+          {...this.boundActionCreators}
+        />
       </div>
     );
   }
@@ -52,11 +60,13 @@ class Header extends Component {
 
 Header.propTypes = {
   layout: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
   layout: state.layout,
+  location: state.location.data,
 });
 
 export default connect(

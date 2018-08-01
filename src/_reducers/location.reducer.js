@@ -1,29 +1,35 @@
-import { locationConstants } from '../_constants';
+import { locationConstants as type } from '../_constants';
 
 const initialState = {
   error: null,
   isFetching: false,
+  currentLocation: '',
   data: {},
 };
 
 export default function LocationReducer(state = initialState, action) {
   switch (action.type) {
-    case locationConstants.FETCH_LOCATION_REQUEST:
+    case type.FETCH_LOCATION_REQUEST:
       return {
         ...state,
         isFetching: true,
       };
-    case locationConstants.FETCH_LOCATION_SUCCESS:
+    case type.FETCH_LOCATION_SUCCESS:
       return {
         ...state,
         isFetching: false,
         data: action.payload,
       };
-    case locationConstants.FETCH_LOCATION_FAILURE:
+    case type.FETCH_LOCATION_FAILURE:
       return {
         ...state,
         isFetching: false,
         error: action.payload,
+      };
+    case type.SET_CURRENT_LOCATION:
+      return {
+        ...state,
+        currentLocation: action.payload,
       };
     default:
       return state;

@@ -1,0 +1,16 @@
+.weather-information {
+  font-size: 20px;
+}
+
+.weather-information-item {
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.weather-information-item span {
+  margin-right: 10px;
+}
+
+.weather-info-units {
+  margin-left: 5px;
+}

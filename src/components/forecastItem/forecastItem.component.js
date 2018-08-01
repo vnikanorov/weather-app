@@ -1,28 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 
 import './forecastItem.component.css';
 
+import { utils } from '../../_helpers';
 import { WeatherPoint, Timeline } from '..';
 
 class ForecastItem extends Component {
-  getTime(timestamp) {
-    return moment.unix(timestamp).format('HH:mm');
-  }
-
-  getIntTemp(temp) {
-    const str = String(temp);
-    return str.split('.')[0];
-  }
-
   render() {
     const { weather } = this.props;
 
     return (
       <div className="forecast-item">
         <div className="forecast-time">
-          {this.getTime(weather.dt)}
+          {utils.timestampToTime(weather.dt)}
         </div>
         <div className="forecast-icon">
           <WeatherPoint size="small" />
@@ -32,7 +23,7 @@ class ForecastItem extends Component {
             {weather.weather[0].main}
           </div>
           <div className="info-temp">
-            {this.getIntTemp(weather.main.temp)}
+            {utils.getIntTemp(weather.main.temp)}
             <span>
               &deg;C
             </span>
